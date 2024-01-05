@@ -1,7 +1,6 @@
 new Tabs('tab1', {
-  // firstTabActive: true,
+  firstTabActive: true,
   isChanged(tabs) {
     console.log(tabs);
   },
-
 })

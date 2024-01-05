@@ -1,70 +1,34 @@
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-html {
+.tabs {
     box-sizing: border-box;
-}
-
-body {
     font-family: Arial, Verdana, sans-serif;
-    margin: 0;
-}
-
-body.dis-scroll {
-	position: fixed;
-	left: 0;
-	top: 0;
-	overflow: hidden;
-	width: 100%;
-	height: 100vh;
-	overscroll-behavior: none;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
 }
 
 .tabs__content {
+    box-sizing: inherit;
     position: relative;
 }
 
 .tabs__panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease 0s,  visibility 0.3s ease 0s;
+    box-sizing: inherit;
+    display: none;
 }
 
 .tabs__panel_active {
-    position: relative;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
+    display: block;
 }
 
 .tabs__list {
+    box-sizing: inherit;
     list-style: none;
     padding: 0;
 }
 
 .tabs__button {
+    box-sizing: inherit;
     padding: 0;
     border: none;
     background-color: transparent;
-}
-
-.tabs__button:focus {
-    background-color: rgb(176, 85, 85);
+    cursor: pointer;
 }
 
 .tabs__button_active {

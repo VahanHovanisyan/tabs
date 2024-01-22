@@ -21,6 +21,7 @@
     box-sizing: inherit;
     list-style: none;
     padding: 0;
+    display: flex;
 }
 
 .tabs__button {

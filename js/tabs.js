@@ -19,6 +19,7 @@ class Tabs {
     init() {
         this.tabsList.setAttribute('role', 'tablist');
         this.tabsButtons.forEach((button, index) => {
+            button.setAttribute('type', 'button');
             button.setAttribute('role', 'tab');
             button.setAttribute('id', `${this.tabsElem}${++index}`);
             button.classList.remove('tabs__button_active');
@@ -39,6 +40,26 @@ class Tabs {
         this.tabs.addEventListener('click', (e) => {
             this.switchTabs(e)
         })
+        this.tabsButtons.forEach((item, index) => {
+            item.addEventListener('keydown', event => {
+                const prevIndex = (index - 1 + this.tabsButtons.length) % this.tabsButtons.length;
+                const nextIndex = (index + 1) % this.tabsButtons.length;
+                switch (event.code) {
+                    case 'ArrowUp':
+                        this.tabsButtons[prevIndex].focus();
+                        break;
+                    case 'ArrowDown':
+                        this.tabsButtons[nextIndex].focus();
+                        break;
+                    case 'ArrowLeft':
+                        this.tabsButtons[prevIndex].focus();
+                        break;
+                    case 'ArrowRight':
+                        this.tabsButtons[nextIndex].focus();
+                        break;
+                }
+            });
+        });
     }
 
     switchTabs(e) {
